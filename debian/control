@@ -1,0 +1,21 @@
+Source: adaptation-droidian-bronco
+Maintainer: Bardia Moshiri
+Section: metapackages
+Priority: optional
+Build-Depends: debhelper (>= 13)
+Standards-Version: 4.5.0.3
+Vcs-Browser: https://github.com/droidian-devices/adaptation-droidian-bronco
+Vcs-Git: https://github.com/droidian-devices/adaptation-droidian-bronco.git
+
+Package: adaptation-droidian-bronco
+Architecture: arm64
+Depends: ${misc:Depends},
+         adaptation-hybris-api32-phone,
+         adaptation-bronco-configs,
+Description: adapatation-droidian-bronco
+ bronco api32 adaptation metapackage
+
+Package: adaptation-bronco-configs
+Architecture: arm64
+Depends: ${misc:Depends},
+Description: bronco's adaptation configs
