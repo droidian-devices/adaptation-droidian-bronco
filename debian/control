@@ -10,10 +10,10 @@ Vcs-Git: https://github.com/droidian-devices/adaptation-droidian-bronco.git
 Package: adaptation-droidian-bronco
 Architecture: arm64
 Depends: ${misc:Depends},
-         adaptation-hybris-api32-phone,
+         adaptation-hybris-api33-phone,
          adaptation-bronco-configs,
 Description: adapatation-droidian-bronco
- bronco api32 adaptation metapackage
+ bronco api33 adaptation metapackage
 
 Package: adaptation-bronco-configs
 Architecture: arm64
