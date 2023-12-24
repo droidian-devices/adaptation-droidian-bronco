@@ -1,1 +1,2 @@
 /dev/null /etc/systemd/network/99-default.link
+/vendor/etc/media_profiles_taro.xml /usr/lib/droid-vendor-overlay/etc/media_profiles_vendor.xml
