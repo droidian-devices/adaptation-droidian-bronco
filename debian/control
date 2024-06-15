@@ -12,6 +12,7 @@ Architecture: arm64
 Depends: ${misc:Depends},
          adaptation-hybris-api32-phone,
          adaptation-bronco-configs,
+         linux-bootimage-5.10.198-android12-11-common-5.10-android12,
 Description: adapatation-droidian-bronco
  bronco api32 adaptation metapackage
 
