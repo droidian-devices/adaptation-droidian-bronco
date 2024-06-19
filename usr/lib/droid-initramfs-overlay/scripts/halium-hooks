@@ -1,0 +1,22 @@
+halium_hook_setup_touchscreen()
+{
+	tell_kmsg "Setup touchscreen"
+
+	mkdir -p "/lib/modules/$(uname -r)"
+	cp /vendor_dlkm/lib/modules/*.ko "/lib/modules/$(uname -r)"
+
+	depmod -a
+
+	modlist="/vendor_dlkm/lib/modules"
+	let count=0
+	for m in "$modlist"/*.ko
+	do
+		tell_kmsg "Loading module $(basename $m)"
+		modprobe -a $(basename $m)
+		let count=count+1
+	done  
+	tell_kmsg "Total modules: $count"
+
+	tell_kmsg "Done setup touchscreen"
+	return 0
+}

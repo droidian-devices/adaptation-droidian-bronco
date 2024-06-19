@@ -1,0 +1,28 @@
+#!/bin/sh
+
+KERNEL_VERSION="5.10.198-android12-11-common-5.10-android12"
+WORK_DIR="/tmp/bronco"
+
+update_ramdisk()
+{
+	echo "Update initramfs for $KERNEL_VERSION ..."
+	mkdir -p $WORK_DIR
+	cd $WORK_DIR
+	unpack_bootimg --boot_img /boot/boot.img-$KERNEL_VERSION --out boot --format=mkbootimg | tee mkbootimg_args
+	mkdir new_ramdisk
+	cd new_ramdisk
+	lz4 -c -d ../boot/ramdisk | cpio -i
+	cp -Rav /usr/lib/droid-initramfs-overlay/* .
+	find . | cpio -o -R 0:0 -H newc | lz4 -9 -l > ../boot/ramdisk
+	cd ..
+	mkbootimg $(cat mkbootimg_args) -o /boot/boot.img-$KERNEL_VERSION
+	cd /
+	rm -rf $WORK_DIR
+	echo "Done!"
+}
+
+echo "Checking for existing boot image"
+if [ -e /boot/boot.img-$KERNEL_VERSION ]; then
+	echo "found boot image: /boot/boot.img-$KERNEL_VERSION"
+	update_ramdisk
+fi

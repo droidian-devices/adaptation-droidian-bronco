@@ -1,3 +1,4 @@
 /etc/udev/rules.d
 /usr/lib/droidian/device
+/usr/lib/droid-initramfs-overlay
 /usr/lib/droid-vendor-overlay
