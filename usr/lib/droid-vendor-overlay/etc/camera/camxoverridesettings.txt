@@ -1,0 +1,3 @@
+exposeFullSizeForQCFA=TRUE
+enableTuningMetadata=0
+enable3ADebugData=0
