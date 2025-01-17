@@ -1,22 +1,42 @@
-Source: adaptation-droidian-bronco
-Maintainer: Bardia Moshiri
+Source: adaptation-lenovo-bronco
 Section: metapackages
+Maintainer: Alexander Rutz <alex@familyrutz.com>
+XSBC-Original-Maintainer:: Bardia Moshiri
 Priority: optional
 Build-Depends: debhelper (>= 13)
 Standards-Version: 4.5.0.3
 Vcs-Browser: https://github.com/droidian-devices/adaptation-droidian-bronco
 Vcs-Git: https://github.com/droidian-devices/adaptation-droidian-bronco.git
 
-Package: adaptation-droidian-bronco
+Package: adaptation-lenovo-bronco
+Replaces: adaptation-droidian-bronco
+Breaks: adaptation-droidian-bronco
 Architecture: arm64
 Depends: ${misc:Depends},
          adaptation-hybris-api32-phone,
-         adaptation-bronco-configs,
-         linux-bootimage-5.10.218-android12-9-common-5.10-android12,
-Description: adapatation-droidian-bronco
- bronco api32 adaptation metapackage
+         adaptation-lenovo-bronco-configs,
+         linux-bootimage-common-5.10-android12,
+Description: Droidian adaptation for
+ Lenovo Thinkphone by Motorola - metapackage
 
-Package: adaptation-bronco-configs
+Package: adaptation-lenovo-bronco-configs
+Replaces: adaptation-bronco-configs
+Breaks: adaptation-bronco-configs
 Architecture: arm64
 Depends: ${misc:Depends},
-Description: bronco's adaptation configs
+Description: Droidian adaptation for
+ Lenovo Thinkphone by Motorola - adaptation configurations
+
+Package: adaptation-droidian-bronco
+Depends: adaptation-lenovo-bronco, ${misc:Depends}
+Architecture: all
+Priority: optional
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: adaptation-bronco-configs
+Depends: adaptation-lenovo-bronco-configs, ${misc:Depends}
+Architecture: all
+Priority: optional
+Description: transitional package
+ This is a transitional package. It can safely be removed.
