@@ -1,3 +1,4 @@
 /etc/udev/rules.d
 /usr/lib/droidian/device
 /usr/lib/droid-vendor-overlay
+/usr/lib/systemd/system/waydroid-container.service.d/
