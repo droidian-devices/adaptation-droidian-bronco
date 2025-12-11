@@ -15,7 +15,7 @@ Architecture: arm64
 Depends: ${misc:Depends},
          adaptation-hybris-api32-phone,
          adaptation-lenovo-bronco-configs,
-         linux-bootimage-common-5.10-android12,
+         linux-bootimage-lenovo-bronco,
          libdroid-hal-lights,
 Description: Droidian adaptation for
  Lenovo Thinkphone by Motorola - metapackage
