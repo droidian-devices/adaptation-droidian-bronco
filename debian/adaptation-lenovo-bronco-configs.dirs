@@ -3,3 +3,4 @@
 /usr/lib/droidian/device
 /usr/lib/droid-vendor-overlay
 /usr/lib/systemd/system/waydroid-container.service.d/
+/usr/share/wireplumber/wireplumber.conf.d/
